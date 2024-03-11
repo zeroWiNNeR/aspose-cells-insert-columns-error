@@ -26,7 +26,7 @@ public class AsposecellsApplication {
 
 			PasteOptions options = new PasteOptions();
 			options.setPasteType(PasteType.ALL);
-			copyRange.copy(range);
+			copyRange.copy(range, options);
 
 			System.out.printf("B. text1: '%s', %s, validation2: '%s'%n", cells.get("B1").getValue(), cells.get("B2").getStyle().getForegroundColor(), cells.get("B2").getValidation());
 			System.out.printf("C. text1: '%s', %s, validation2: '%s'%n", cells.get("C1").getValue(), cells.get("C2").getStyle().getForegroundColor(), cells.get("C2").getValidation());
