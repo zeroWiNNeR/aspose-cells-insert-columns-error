@@ -12,7 +12,7 @@ public class AsposecellsApplication {
 			Worksheet worksheet = workbook.getWorksheets().get(0);
 			Cells cells = worksheet.getCells();
 
-			cells.insertColumns(4, 1);
+			cells.insertColumns(4, 1, true);
 
 			System.out.printf("B. text1: '%s', %s, validation2: '%s'%n", cells.get("B1").getValue(), cells.get("B2").getStyle().getForegroundColor(), cells.get("B2").getValidation());
 			System.out.printf("C. text1: '%s', %s, validation2: '%s'%n", cells.get("C1").getValue(), cells.get("C2").getStyle().getForegroundColor(), cells.get("C2").getValidation());
@@ -21,8 +21,8 @@ public class AsposecellsApplication {
 			System.out.printf("F. text1: '%s', %s, validation2: '%s'%n", cells.get("F1").getValue(), cells.get("F2").getStyle().getForegroundColor(), cells.get("F2").getValidation());
 			System.out.println("New column created");
 
-			Range range = worksheet.getCells().createRange("B1", "C2");
-			Range copyRange = worksheet.getCells().createRange("D1", "E2");
+			Range range = cells.createRange("B1", "C2");
+			Range copyRange = cells.createRange("D1", "E2");
 
 			PasteOptions options = new PasteOptions();
 			options.setPasteType(PasteType.ALL);
